@@ -16,7 +16,7 @@ router.get("/user/devices/:id",(req,res)=>{
   deviceSchema
   .find({"userID":id})
   .then((data)=>res.json(data))
-  .catch((error)=>console.error(error))
+  .catch((error)=>res.status(404).json({msg:'device not found'}))
 })
 
 router.get("/devices/:id",(req,res)=>{
@@ -24,7 +24,7 @@ router.get("/devices/:id",(req,res)=>{
   deviceSchema
   .findById(id)
   .then((data)=>res.json(data))
-  .catch((error)=>console.error(error))
+  .catch((error)=>res.status(404).json({msg:'device not found'}))
 })
 
 router.delete("/devices/:id",(req,res)=>{
@@ -32,6 +32,6 @@ router.delete("/devices/:id",(req,res)=>{
   deviceSchema
   .remove({_id:id})
   .then((data)=>res.json(data))
-  .catch((error)=>console.error(error))
+  .catch((error)=>res.status(404).json({msg:'device not found'}))
 })
 module.exports = router;

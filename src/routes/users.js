@@ -39,7 +39,7 @@ router.get("/users/:id",(req,res)=>{
   userSchema
   .findById(id)
   .then((data)=>res.json(data))
-  .catch((error)=>console.error(error))
+  .catch((error)=>res.status(404).json({msg:'user not found'}))
 })
 
 router.delete("/users/:id",(req,res)=>{

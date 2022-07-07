@@ -58,3 +58,6 @@ content-type: application/json
 ###
 
 GET http://localhost:9000/elektrik/tariff HTTP/1.1
+
+###
+GET https://electrik-api.herokuapp.com/devices HTTP/1.1
