@@ -1,0 +1,60 @@
+62c52a585d4971fa2879ee9b
+62c5295894508cda0728d370
+###
+POST http://localhost:9000/elektrik/devices HTTP/1.1
+content-type: application/json
+
+{
+    "deviceName":"x",
+    "power":1,
+    "dailyUse":3,
+    "weekUse":4,
+    "KWhDay":5,
+    "KWhMonth":6,
+    "cost":3.5,
+    "userID":"62c52a585d4971fa2879ee9b"
+}
+
+###
+POST http://localhost:9000/elektrik/users HTTP/1.1
+content-type: application/json
+
+{
+    "name":"admin",
+    "email":"admin@gmail.com",
+    "userName":"admin",
+    "password":"admin",
+    "role":"admin"
+}
+
+###
+GET http://localhost:9000/elektrik/user/devices/62c5295894508cda0728d370 HTTP/1.1
+
+###
+GET http://localhost:9000/elektrik/devices/62c5248b4aea0d988a607939 HTTP/1.1
+
+###
+
+DELETE  http://localhost:9000/elektrik/devices/62c5248b4aea0d988a607939 HTTP/1.1
+###
+POST http://localhost:9000/elektrik/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "userName":"Allancito12",
+    "password":"1234"
+}
+
+###
+PUT http://localhost:9000/elektrik/tariff HTTP/1.1
+content-type: application/json
+
+{
+    "cost": 4.3,
+    "_id": "62c61b9e743f8fd290549a65",
+    "__v": 0
+}
+
+###
+
+GET http://localhost:9000/elektrik/tariff HTTP/1.1
